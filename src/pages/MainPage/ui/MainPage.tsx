@@ -7,6 +7,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { useNavigate } from "react-router-dom";
 import { getRouteDetails } from "shared/const/router";
 import { Skeleton } from "shared/ui/Skeleton";
+import { Button } from "shared/ui/Button";
 import { useBeerStore } from "entities/Beer/model/store";
 import cls from "./MainPage.module.scss";
 
@@ -89,10 +90,12 @@ const MainPage = () => {
           <Text title="Beer Recipes" />
           {selectedBeers.length > 0 && (
             <HStack gap="16">
-              <button onClick={handleDeleteSelected}>Delete</button>
-              <button onClick={handleClearAllSelected}>
+              <Button onClick={handleDeleteSelected} variant="filled">
+                Delete
+              </Button>
+              <Button onClick={handleClearAllSelected} variant="filled">
                 Clear all selected
-              </button>
+              </Button>
             </HStack>
           )}
         </HStack>

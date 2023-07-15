@@ -2,6 +2,7 @@ import { Card } from "shared/ui/Card";
 import { Text } from "shared/ui/Text";
 import { useNavigate } from "react-router-dom";
 import { VStack } from "shared/ui/Stack";
+import { Button } from "../../../shared/ui/Button";
 
 const NotFoundPage = () => {
   const navigate = useNavigate();
@@ -9,9 +10,9 @@ const NotFoundPage = () => {
     <Card>
       <VStack align="center" gap="8">
         <Text title="Page not found" size="l" variant="error" align="center" />
-        <button onClick={() => navigate(-1)}>
+        <Button onClick={() => navigate(-1)} size="l">
           Return to the previous page
-        </button>
+        </Button>
       </VStack>
     </Card>
   );

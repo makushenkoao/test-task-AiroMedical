@@ -7,6 +7,7 @@ import { AppImage } from "shared/ui/AppImage";
 import { Skeleton } from "shared/ui/Skeleton";
 import { useBeerStore } from "entities/Beer/model/store";
 import cls from "./DetailsPage.module.scss";
+import { Button } from "shared/ui/Button";
 
 const DetailsPage = () => {
   const params = useParams<{
@@ -48,7 +49,7 @@ const DetailsPage = () => {
   if (isBeersLoading) {
     return (
       <Card max>
-        <Skeleton width={35} height={20} />
+        <Skeleton width={70} height={40} />
         <VStack gap="16" max>
           <VStack gap="8" align="center" max>
             <Skeleton width={200} height={200} />
@@ -69,7 +70,7 @@ const DetailsPage = () => {
 
   return (
     <Card max>
-      <button onClick={handleClick}>Back</button>
+      <Button onClick={handleClick}>Back</Button>
       <VStack gap="16" max>
         <VStack gap="8" align="center" max>
           <AppImage
@@ -82,6 +83,8 @@ const DetailsPage = () => {
           <Text title={beer.name} text={beer.tagline} align="center" size="l" />
         </VStack>
         <Text title="Description:" text={beer.description} />
+        <Text title="First brewed:" text={beer.first_brewed} />
+        <Text title="Abv:" text={beer.abv.toString()} />
         <Text title="Ingredients:" />
         <table className={cls.table}>
           <thead>
@@ -134,6 +137,8 @@ const DetailsPage = () => {
           </tfoot>
         </table>
         <Text title="Brewers tips:" text={beer.brewers_tips} />
+        <Text title="Contributed by:" text={beer.contributed_by} />
+        <Text title="Food pairing" text={beer.food_pairing.join("; ")} />
       </VStack>
     </Card>
   );
