@@ -23,7 +23,6 @@ type BeerStore = {
 export const useBeerStore = create(
   devtools<BeerStore>((set, get) => ({
     beers: [],
-    isBeersLoading: false,
     isBeersError: false,
     page: 1,
     selectedBeers: [],

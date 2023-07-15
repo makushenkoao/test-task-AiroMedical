@@ -12,7 +12,10 @@ export const Card = memo((props: CardProps) => {
   const { className, children, max, ...rest } = props;
 
   return (
-    <div className={classNames(cls.Card, { [cls.max]: max }, [className])} {...rest}>
+    <div
+      className={classNames(cls.Card, { [cls.max]: max }, [className])}
+      {...rest}
+    >
       {children}
     </div>
   );

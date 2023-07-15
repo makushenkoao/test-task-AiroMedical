@@ -1,1 +1,1 @@
-export type { Beer } from './model/types/beer'
+export type { Beer } from "./model/types/beer";

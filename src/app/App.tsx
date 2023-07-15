@@ -1,5 +1,5 @@
 import React from "react";
-import { AppRouter } from './providers/router/ui/AppRouter'
+import { AppRouter } from "./providers/router/ui/AppRouter";
 
 export const App = () => {
   return (

@@ -33,7 +33,7 @@ const MainPage = () => {
   }, [fetchBeers, page, beers]);
 
   useEffect(() => {
-    if (!beers.length && !isBeersLoading) {
+    if (!beers.length && isBeersLoading === false) {
       incrementPage();
     }
   }, [incrementPage, beers, isBeersLoading]);
