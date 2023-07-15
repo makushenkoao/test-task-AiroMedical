@@ -1,5 +1,7 @@
 # Test task AiroMedical
 
+### I completed the test task throughout the day
+
 ## Technologies:
 - [React](https://react.dev/)
 - [Zustand](https://zustand-demo.pmnd.rs/)

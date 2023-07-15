@@ -2,7 +2,7 @@ import { Card } from "shared/ui/Card";
 import { Text } from "shared/ui/Text";
 import { VStack } from "shared/ui/Stack";
 import { useNavigate, useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { AppImage } from "shared/ui/AppImage";
 import { Skeleton } from "shared/ui/Skeleton";
 import { useBeerStore } from "entities/Beer/model/store";
@@ -21,8 +21,12 @@ const DetailsPage = () => {
     page,
     isLastPage,
     incrementPage,
+    setPage,
+    setBeers,
   } = useBeerStore();
   const beer = beers.find(({ id }) => id === Number(params.id));
+  const { current: pageRef } = useRef(page);
+  const { current: beersRef } = useRef(beers);
 
   useEffect(() => {
     fetchBeers();
@@ -36,6 +40,8 @@ const DetailsPage = () => {
   }, [incrementPage, isLastPage, beers, isBeersLoading]);
 
   const handleClick = () => {
+    setPage(pageRef);
+    setBeers(beersRef);
     navigate(-1);
   };
 
